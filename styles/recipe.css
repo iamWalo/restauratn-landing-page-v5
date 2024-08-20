@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --first-clr: #EB1412;
+    --second-clr: #101A24;
+    --black-clr: #000000;
+    --white-clr: #fff;
+    --third-clr: #FFD143;
+}
+
+
+.recipe-intro {
+    background-image: url("../images/recipe-intro-bg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 600px;
+}
+
+.recipe-intro h1 {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Irish Grover";
+    font-size: 61px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+}
+
+
+.recipes-container-header-title h2 {
+    color: var(--black-clr);
+    font-family: "Inter";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 72px;
+}
+
+.recipes-container-header-title h1 {
+    font-size: 40px;
+    margin: 0 10px;
+}
+
+.recipes-container-header-title h4 {
+    color: var(--black-clr);
+    font-family: "Inter";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 72px;
+    margin: 10px 0 0 10px;
+}
+
+.recipes-container-header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trendy-recipes {
+    display: none;
+}
+
+.featured-recipes {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
