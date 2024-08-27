@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in Touch Section</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/constactUs.css">
+</head>
+
+<body>
+    <section class="header">
+        <div class="header-center">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/images/logo.png" alt="logo">
+                    <a href="index.html">LOGO</a>
+                </a>
+            </div>
+            <div class="sidebar">
+                <i class="fa fa-times" id="menu-close"></i>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                        <li><a href="contactUs.html" class="clicked">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-button">
+                <button class="btn">Connect Wallet</button>
+            </div>
+            <i class="fa fa-bars" id="menu-open"></i>
+        </div>
+    </section>
+    <section class="section">
+        <div class="left-content">
+            <h2>Get in touch</h2>
+            <p>Need assistance? Our friendly team is available 24/7 to <br>help you. Get in touch, and we'll have
+                everything
+                set up in <br> just 5 minutes!**</p>
+
+            <div class="contact-info">
+                <h3>Casablanca</h3>
+                <p><span>ADDRESS:</span> 200 Boulevard Mohamed Zerktouni</p>
+                <p><span>PHONE:</span> <a href="tel:+212522345678">+212 522-345-678</a></p>
+                <p><span>EMAIL:</span> <a href="mailto:Allamousouhail2020@gmail.com">Allamousouhail2020@gmail.com</a>
+                </p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Marrakech</h3>
+                <p><span>ADDRESS:</span> 1 Avenue de la Menara, Marrakech</p>
+                <p><span>PHONE:</span> <a href="tel:+212524567890">+212 524-567-890</a></p>
+                <p><span>EMAIL:</span> <a href="mailto:Marrakechoffice@example.com">Marrakechoffice@example.com</a></p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Rabat</h3>
+                <p><span>ADDRESS:</span> 7 Rue Agdal, Rabat</p>
+                <p><span>PHONE:</span> <a href="tel:+212537234567">+212 537-234-567</a></p>
+                <p><span>EMAIL:</span> <a href="mailto:Rabatoffice@example.com">Rabatoffice@example.com</a></p>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <iframe class="map-iframe" id="mapIframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5830634853877!2d-7.623098999999999!3d33.5731104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7c82d57fe1b2f%3A0x977e3ffca3b11970!2sBoulevard%20Mohamed%20Zerktouni%2C%20Casablanca%2020250!5e0!3m2!1sen!2sma!4v1600075041728!5m2!1sen!2sma"
+                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <div class="pagination">
+                <div class="arrow" onclick="prevMap()">&lt;</div>
+                <div id="casablancaBtn" class="active bg-img" onclick="showMap('Casablanca')">C</div>
+                <div id="marrakechBtn" class="bg-img" onclick="showMap('Marrakech')">M</div>
+                <div id="rabatBtn" class="bg-img" onclick="showMap('Rabat')">R</div>
+                <div class="arrow" onclick="nextMap()">&gt;</div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-top">
+            <div class="logo footer-logo">
+                <img src="/images/footer-logo.png" alt="logo">
+                <a href="#">LOGO</a>
+            </div>
+            <ul class="footer-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Trends</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Get in touch</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-languages">
+                <a href="#" class="language active-language">English</a>
+                <a href="#" class="language">Arabic</a>
+                <a href="#" class="language">French</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2024 Rich Technologies. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentMap = 'Casablanca';
+        const maps = {
+            'Casablanca': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5830634853877!2d-7.623098999999999!3d33.5731104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7c82d57fe1b2f%3A0x977e3ffca3b11970!2sBoulevard%20Mohamed%20Zerktouni%2C%20Casablanca%2020250!5e0!3m2!1sen!2sma!4v1600075041728!5m2!1sen!2sma',
+            'Marrakech': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27176.40611385319!2d-8.01956546500368!3d31.63246042939783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafefd3fda641bf%3A0xb516092029346f2d!2sM%20Bacha%20Restaurant!5e0!3m2!1sen!2sma!4v1724782224509!5m2!1sen!2sma',
+            'Rabat': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105884.60851931132!2d-6.940179997407899!3d33.96956347847132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76d47c55901e7%3A0xeeedba0a87163e35!2sBurger%20King%20-%20Agdal%20Ryad!5e0!3m2!1sen!2sma!4v1724782403051!5m2!1sen!2sma'
+        };
+
+        function showMap(city) {
+            currentMap = city;
+            document.getElementById('mapIframe').src = maps[city];
+            updateActiveButton();
+        }
+
+        function updateActiveButton() {
+            document.getElementById('casablancaBtn').classList.remove('active');
+            document.getElementById('marrakechBtn').classList.remove('active');
+            document.getElementById('rabatBtn').classList.remove('active');
+
+            if (currentMap === 'Casablanca') {
+                document.getElementById('casablancaBtn').classList.add('active');
+            } else if (currentMap === 'Marrakech') {
+                document.getElementById('marrakechBtn').classList.add('active');
+            } else if (currentMap === 'Rabat') {
+                document.getElementById('rabatBtn').classList.add('active');
+            }
+        }
+
+        function prevMap() {
+            if (currentMap === 'Casablanca') {
+                showMap('Rabat');
+            } else if (currentMap === 'Marrakech') {
+                showMap('Casablanca');
+            } else if (currentMap === 'Rabat') {
+                showMap('Marrakech');
+            }
+        }
+
+        function nextMap() {
+            if (currentMap === 'Casablanca') {
+                showMap('Marrakech');
+            } else if (currentMap === 'Marrakech') {
+                showMap('Rabat');
+            } else if (currentMap === 'Rabat') {
+                showMap('Casablanca');
+            }
+        }
+    </script>
+</body>
+
+</html>

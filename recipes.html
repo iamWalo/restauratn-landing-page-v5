@@ -11,8 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/recipe.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/recipe.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
@@ -27,8 +27,8 @@
         <section class="header">
             <div class="header-center">
                 <div class="logo">
-                    <img src="/images/logo.png" alt="logo">
-                    <a href="#">LOGO</a>
+                    <img src="./images/logo.png" alt="logo">
+                    <a href="index.html">LOGO</a>
                 </div>
                 <div class="sidebar">
                     <i class="fa fa-times" id="menu-close"></i>
@@ -37,7 +37,7 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="recipes.html " class="clicked">Recipes</a></li>
                             <li><a href="aboutUs.html">About Us</a></li>
-                            <li><a href="index.html">Contact Us</a></li>
+                            <li><a href="contactUs.html">Contact Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -48,21 +48,20 @@
             </div>
         </section>
         <section class="recipe-intro">
-            <div>
-                <h1>Welcome – A Culinary Journey <br> Awaits You.</h1>
+            <video src="./images/recipes-intro-bg.mp4" id="recipe-video" autoplay muted loop></video>
+            <div class="recipt-intro-content">
+                <div>
+                    <h1>Welcome – A Culinary Journey <br> Awaits You.</h1>
+                </div>
+                <button class="view-more btn">View Menu</button>
             </div>
-            <button class="view-more btn">View Menu</button>
         </section>
         <section class="recipes-container">
             <div class="recipes-container-header">
-                <div class="recipes-container-header-title">
-                    <div class="trendy-recipes-link">
-                        <h2 class="trendy-recipes-link">Trendy <span class="red">Recipes</span></h2>
-                    </div>
-                    <h1>/</h1>
-                    <div class="featured-recipes-link">
-                        <h4 class="featured-recipes-link">Featured Recipes</h4>
-                    </div>
+                <div class="big-link" id="big-title">
+                </div>
+                <h2>/</h2>
+                <div class="small-link" id="small-title">
                 </div>
             </div>
             <section class="trendy-recipes show">
@@ -287,8 +286,8 @@
         <footer class="footer-section">
             <div class="footer-top">
                 <div class="logo footer-logo">
-                    <img src="/images/footer-logo.png" alt="logo">
-                    <a href="#">LOGO</a>
+                    <img src="./images/footer-logo.png" alt="logo">
+                    <a href="index.html">LOGO</a>
                 </div>
                 <ul class="footer-menu">
                     <li><a href="#">Home</a></li>
@@ -316,9 +315,35 @@
         </footer>
     </div>
 
+    <script>
+        // recipes sripte
+        const bigTitleContainer = document.getElementById('big-title');
+        const smallTitleContainer = document.getElementById('small-title');
+        const headerContainer = document.querySelector('.recipes-container-header');
+        const featuredSection = document.querySelector('.featured-recipes')
+        const trendySection = document.querySelector('.trendy-recipes')
 
+
+        const featuredTitle = `<h1 class="featured-recipes-link">Featured <span>Recipes</span></h1>`;
+        const trendyTitle = `<h1 class="trendy-recipes-link">Trendy <span>Recipes</span></h1>`;
+
+        smallTitleContainer.innerHTML = featuredTitle;
+        bigTitleContainer.innerHTML = trendyTitle;
+        smallTitleContainer.addEventListener('click', () => {
+            if (smallTitleContainer.innerHTML === featuredTitle) {
+                bigTitleContainer.innerHTML = featuredTitle;
+                smallTitleContainer.innerHTML = trendyTitle;
+                featuredSection.classList.add('show');
+                trendySection.classList.remove('show');
+            } else if (smallTitleContainer.innerHTML === trendyTitle) {
+                bigTitleContainer.innerHTML = trendyTitle;
+                smallTitleContainer.innerHTML = featuredTitle;
+                trendySection.classList.add('show');
+                featuredSection.classList.remove('show');
+            }
+        })
+    </script>
     <script src="javaScript/script.js"></script>
-
 
 
 </body>

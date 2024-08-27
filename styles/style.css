@@ -2,7 +2,7 @@
 
 /* global */
 body {
-    font-family: "Roboto", Arial, sans-serif, "Irish Grover";
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -34,6 +34,7 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--white-clr);
 }
 
 li {
@@ -70,6 +71,10 @@ h6 {
     display: none;
 }
 
+p {
+    transition: all 6s;
+}
+
 /*               header                    */
 .header {
     display: flex;
@@ -101,7 +106,7 @@ div.sidebar {
 
 .logo a {
     color: #000;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 22px;
     font-style: normal;
     font-weight: 700;
@@ -124,9 +129,11 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
+    font-style: normal;
     font-weight: 500;
+    line-height: normal;
     color: var(--black-clr);
     transition: color 0.3s ease;
 }
@@ -162,7 +169,6 @@ div.header-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
 }
 
 .hero-content {
@@ -190,14 +196,14 @@ div.header-button {
 
 .text-section p {
     color: #5C6574;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
 }
 
 .buttons {
-    margin: 50px 0 70px 0;
+    margin: 50px 0;
 }
 
 .menu-btn,
@@ -308,10 +314,6 @@ img.section-1-bottom-left-img {
     width: 80%;
     margin: 0 auto;
     padding: 20px 0 100px 0;
-}
-
-.featured-recipes {
-    margin-top: 50px;
 }
 
 .featured-recipes h2 {
@@ -445,11 +447,18 @@ img.section-1-bottom-left-img {
     align-items: center;
 }
 
+.menu-image {
+    position: relative;
+    z-index: 55;
+}
+
 .menu-image img {
+    position: relative;
     width: 550px;
     height: 550px;
     border-radius: 10px;
     margin: 0 50px;
+    z-index: 55;
 }
 
 .menu-list {
@@ -465,9 +474,12 @@ img.section-1-bottom-left-img {
 }
 
 .menu-item {
+    position: relative;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+    /*  for aniamtion  */
+    opacity: 0;
 }
 
 .menu-item img {
@@ -560,11 +572,12 @@ video {
 .testimonials-section {
     padding: 40px 20px 100px 20px;
     background-color: var(--second-clr);
-    max-height: 180vh;
+    height: 550px;
     position: relative;
 }
 
 .testimonials-section h1 {
+    color: var(--white-clr);
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 40px;
@@ -581,7 +594,7 @@ video {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 40px 0;
+    padding: 40px 0 0 0;
 }
 
 .testimonial-card {
@@ -589,10 +602,11 @@ video {
     display: flex;
     justify-content: space-between;
     color: #333;
-    width: 420px;
-    height: 210px;
+    width: 375px;
+    height: 195px;
     border-radius: 55px 25px;
     padding: 20px 20px 30px 20px;
+    cursor: grabbing;
 }
 
 .testimonial-header {
@@ -672,7 +686,7 @@ video {
     background-color: #888;
     border-radius: 50%;
     display: inline-block;
-    margin: 0 5px;
+    margin: 40px 5px;
     cursor: pointer;
 }
 
@@ -869,4 +883,53 @@ video {
     border-radius: 4px;
     background: #4584FF;
     padding: 8px 16px;
+}
+
+.show-from-left {
+    animation: show-from-left 1s;
+}
+
+.show-from-right {
+    animation: show-from-right 1s;
+}
+
+.show-item {
+    opacity: 0;
+    animation: show-item 2s ease;
+}
+
+.show-from-left,
+.show-from-right,
+.show-item {
+    animation-fill-mode: both;
+}
+
+@keyframes show-from-left {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes show-from-right {
+    0% {
+        right: -100%;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes show-item {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
